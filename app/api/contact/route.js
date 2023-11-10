@@ -2,12 +2,12 @@ import { NextResponse } from "next/server";
 
 import nodemailer from "nodemailer";
 
-export async function POST(req: any): Promise<any> {
+export async function POST(req) {
   const { name, email, message } = await req.json();
   const data = { name, email, message };
 
-const user = process.env.User as string;
-const pass= process.env.Password as string 
+const user = process.env.User ;
+const pass= process.env.Password ;
   const transporter = nodemailer.createTransport({
     service: "gmail",
     secure: true,
